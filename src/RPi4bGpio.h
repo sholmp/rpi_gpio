@@ -3,6 +3,7 @@
 
 #include "Gpio.h"
 
+
 class RPi4bGpio : public Gpio
 {
 public:
@@ -11,6 +12,10 @@ public:
    void setDirection(GpioMode mode);
    void read();
    void write(bool value);
+
+private:
+    void exportPin(int pin_number);
+    void setPinMode(GpioMode mode);
 
 private:
     GpioMode mode_;
